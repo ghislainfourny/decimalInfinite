@@ -52,11 +52,11 @@ declare %private function decimals:significand-rec($d as decimal) as decimal
     default return error()
 };
 
-declare function decimals:significand-groups($d as decimal) as integer*
+declare function decimals:significand-groups($s as decimal) as integer*
 {
-    let $s := decimals:significand($d)
     let $tetrade := integer(floor($s))
-    return ($tetrade, decimals:significand-groups-rec(1000*($s - $tetrade)))
+    let $next := 1000*($s - $tetrade)
+    return ($tetrade, if($next eq 0) then () else decimals:significand-groups-rec($next))
 };
 
 declare function decimals:significand-groups-rec($d as decimal) as integer*
@@ -111,19 +111,19 @@ declare function decimals:binary($i as integer) as string*
   return (if($next eq 0) then () else decimals:binary($next), string($i mod 2))  
 };
 
-declare function decimals:encode-significand($significand as decimal, $sign as integer)
+declare function decimals:encode-significand($significand as decimal, $sign as integer) as string*
 {
     let $groups :=
       if($sign eq 1)
       then decimals:significand-groups($significand)
       else decimals:significand-groups(10 - $significand)
-    let $tetrade :=
+    let $tetrade as string* :=
       for $h in head($groups)
       let $binary := decimals:binary($h)
-      return ((4 - count($binary) ) ! "0", $binary)
-    let $declets :=
+      return ((1 to 4 - count($binary)) ! "0", $binary)
+    let $declets as string* :=
       for $h in tail($groups)
       let $binary := decimals:binary($h)
-      return ((10 - count($binary) ) ! "0", $binary)
+      return ((1 to 10 - count($binary) ) ! "0", $binary)
     return ($tetrade, $declets)
 };
