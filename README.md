@@ -1,5 +1,5 @@
 # decimalInfinite
-This is the JSONiq implementation of the decimalInfinite Encoding Service
+This is the JSONiq implementation of the decimalInfinite Encoding Service. It's just 130 lines of code.
 
 # Usage
 
