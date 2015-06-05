@@ -15,3 +15,9 @@ It returns:
 Change the d parameter at will.
 
 That's it!
+
+# Testing validity
+
+[http://decimalinfinite.28.io/test-encode.jq?range=1000&precision=0.1](http://decimalinfinite.28.io/test-encode.jq?range=1000&precision=0.1)
+
+This tests the order preservation of the decimals -100, -99.9, -99.8..., 99.9, 100. You can adjust the range and precision at will.
