@@ -1,5 +1,5 @@
 # decimalInfinite
-This is the JSONiq implementation of the decimalInfinite Encoding Service. It's just [117 lines of code](https://github.com/ghislainfourny/decimalInfinite/blob/master/queries/modules/io/28/modules/decimals.jq).
+This is the JSONiq implementation of the decimalInfinite Encoding Service. It's just [115 lines of code](https://github.com/ghislainfourny/decimalInfinite/blob/master/queries/modules/io/28/modules/decimals.jq).
 
 # Usage
 
