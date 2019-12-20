@@ -1,26 +1,2 @@
 # decimalInfinite
-This is the JSONiq implementation of the decimalInfinite Encoding Service. It's just [115 lines of code](https://github.com/ghislainfourny/decimalInfinite/blob/master/queries/modules/io/28/modules/decimals.jq).
-
-# Usage
-
-Go to [http://decimalinfinite.28.io/encode.jq?d=100&d=3.1415926535&d=981237498716234502893745928734059827345098723409587230495872039485720938457029384570923845720349587](http://decimalinfinite.28.io/encode.jq?d=100&d=3.1415926535&d=981237498716234502893745928734059827345098723409587230495872039485720938457029384570923845720349587)
-
-It returns:
-
-    {
-      "100" : "10110000100", 
-      "3.1415926535" : "1010001101000110101001010000010100011010111110100", 
-      "981237498716234502893745928734059827345098723409587230495872039485720938457029384570923845720349587" : "1011111101001001001110010110001011101101111011011001010001001010110010000011100111010100101110010110100011111010101010010010101100100010001011100001011110110110011101010000101111111011010000100110000111011111010110100000110001010110101100100110100010110000000100011101001001001011101001101101100010100111011100111001001001100101101111011111101100110"
-    }
-    
-Change the d parameter at will.
-
-That's it!
-
-# Testing validity
-
-[http://decimalinfinite.28.io/test-encode.jq?range=1000&precision=0.1](http://decimalinfinite.28.io/test-encode.jq?range=1000&precision=0.1)
-
-This tests the order preservation of the decimals -100, -99.9, -99.8..., 99.9, 100. You can adjust the range and precision at will.
-
-If you find a combination of parameters that breaks the test, please send an e-mail to g@28.io for investigation. 
+This is the JSONiq implementation of the decimalInfinite encoding. It's just [115 lines of code](https://github.com/ghislainfourny/decimalInfinite/blob/master/queries/modules/io/28/modules/decimals.jq).
